@@ -843,7 +843,7 @@
     if (g) return afterAdd(addGraphic(g.dataset.addGraphic));
     if (e.target.closest("[data-add-logo]")) {
       const im = images.logo.img;
-      afterAdd(addImage("logo", im.naturalWidth || 720, im.naturalHeight || 443));
+      afterAdd(addImage("logo", im.naturalWidth || 720, im.naturalHeight || 449));
     }
   });
 

@@ -81,5 +81,5 @@ js/garments.js      shirt outlines shared by the shop and the designer
 design.html         the Design Your Own page
 css/design.css      designer styles
 js/designer.js      the shirt designer and quote request form
-assets/             web logo, favicons; originals/ holds the full-size logo files
+assets/             web logo, favicons; originals/ holds the full-size transparent logo
 ```
