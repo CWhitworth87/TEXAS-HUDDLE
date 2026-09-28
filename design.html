@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Design Your Own | Texas Huddle Co.</title>
+  <meta name="description" content="Design your own custom shirt with Texas Huddle Co. Add your team name, numbers and logo, then send it to us for a quote.">
+  <meta name="theme-color" content="#031F3A">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bebas+Neue&family=Graduate&family=Inter:wght@400;600;800&family=Oswald:wght@500;700&family=Pacifico&family=Permanent+Marker&family=Rye&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/design.css">
+</head>
+<body>
+  <a class="skip-link" href="#designer">Skip to the designer</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand" aria-label="Texas Huddle Co. home">
+        <img src="assets/logo-web.png" alt="Texas Huddle Co. Sports Apparel" width="140" height="86">
+      </a>
+      <nav class="main-nav" aria-label="Main">
+        <a href="index.html#shop">Shop</a>
+        <a href="design.html" aria-current="page">Design your own</a>
+        <a href="index.html#how-to-order">How to order</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="cart-button" href="index.html#cart" aria-label="Open cart" data-cart-link>
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M7 18a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm10 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4ZM5.2 4l.6 3H21l-2.2 8.2a2 2 0 0 1-1.9 1.5H8.3a2 2 0 0 1-2-1.6L4 2H1V0h4.6l.6 4Z" transform="translate(0 1)"/></svg>
+        <span class="cart-label">CART</span>
+        <span class="cart-count" data-cart-count hidden>0</span>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="designer-intro">
+      <div class="container">
+        <p class="eyebrow">Custom gear</p>
+        <h1 class="h1">Design your own</h1>
+        <p>Pick a shirt, add your text, graphics or logo, and drag things where you want them. When it looks right, send it to us for a quote.</p>
+      </div>
+    </section>
+
+    <section id="designer" class="designer-section">
+      <div class="container designer">
+        <!-- Canvas -->
+        <div class="stage">
+          <div class="stage-toolbar">
+            <div class="segmented" role="group" aria-label="Side of shirt">
+              <button type="button" data-view="front" aria-pressed="true">FRONT</button>
+              <button type="button" data-view="back" aria-pressed="false">BACK</button>
+            </div>
+            <div class="toolbar-actions">
+              <button type="button" class="tool-btn" data-undo aria-label="Undo" title="Undo">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 14 4 9l5-5M4 9h10a6 6 0 0 1 0 12h-3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <button type="button" class="tool-btn" data-redo aria-label="Redo" title="Redo">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 14 5-5-5-5M20 9H10a6 6 0 0 0 0 12h3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <button type="button" class="tool-btn" data-download aria-label="Download mockup image" title="Download mockup">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 21h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <button type="button" class="tool-btn" data-reset aria-label="Start over" title="Start over">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M10 11v6m4-6v6M6 7l1 13h10l1-13M9 7V4h6v3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </div>
+          </div>
+          <div class="canvas-wrap">
+            <canvas width="1000" height="1000" tabindex="0" data-canvas aria-label="Shirt design. Select an item to move it with the arrow keys or press Delete to remove it."></canvas>
+          </div>
+          <p class="stage-hint" data-hint>Tap something on the shirt to select it. Drag to move it, use the corner dot to resize, and the top dot to rotate.</p>
+          <p class="area-warning" data-area-warning hidden>Part of your design is outside the print area (dashed box). It may get trimmed when printed.</p>
+        </div>
+
+        <!-- Tools -->
+        <div class="tools">
+          <div class="tool-tabs" role="tablist" aria-label="Design tools">
+            <button type="button" role="tab" id="tab-shirt" aria-controls="panel-shirt" aria-selected="true" data-tab="shirt">1. SHIRT</button>
+            <button type="button" role="tab" id="tab-add" aria-controls="panel-add" aria-selected="false" data-tab="add">2. ADD</button>
+            <button type="button" role="tab" id="tab-edit" aria-controls="panel-edit" aria-selected="false" data-tab="edit">3. EDIT</button>
+          </div>
+
+          <div class="tool-panel" id="panel-shirt" role="tabpanel" aria-labelledby="tab-shirt" data-panel="shirt">
+            <h2 class="panel-title">Style</h2>
+            <div class="style-grid" data-garment-styles></div>
+            <h2 class="panel-title">Shirt color: <span data-garment-color-name></span></h2>
+            <div class="swatch-grid" data-garment-colors></div>
+            <button type="button" class="btn btn-primary btn-block" data-tab-go="add">NEXT: ADD YOUR DESIGN</button>
+          </div>
+
+          <div class="tool-panel" id="panel-add" role="tabpanel" aria-labelledby="tab-add" data-panel="add" hidden>
+            <h2 class="panel-title">Text</h2>
+            <button type="button" class="add-btn add-btn-wide" data-add-text>
+              <span class="add-icon" aria-hidden="true">Aa</span> Add text
+            </button>
+
+            <h2 class="panel-title">Your logo or artwork</h2>
+            <label class="add-btn add-btn-wide upload-btn">
+              <input type="file" accept="image/png,image/jpeg,image/webp,image/gif,image/svg+xml" data-upload>
+              <span class="add-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 16V4m0 0-5 5m5-5 5 5M4 20h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              Upload an image
+            </label>
+            <p class="panel-note">PNG with a transparent background prints best. You can send us the full-size file after your quote.</p>
+
+            <h2 class="panel-title">Graphics</h2>
+            <div class="graphic-grid" data-graphics></div>
+
+            <h2 class="panel-title">Quick starts</h2>
+            <div class="preset-list">
+              <button type="button" class="add-btn add-btn-wide" data-preset="team-front">
+                <span class="add-icon" aria-hidden="true">★</span> Team name, arched, with a star
+              </button>
+              <button type="button" class="add-btn add-btn-wide" data-preset="name-number">
+                <span class="add-icon" aria-hidden="true">24</span> Player name and number on the back
+              </button>
+            </div>
+          </div>
+
+          <div class="tool-panel" id="panel-edit" role="tabpanel" aria-labelledby="tab-edit" data-panel="edit" hidden>
+            <div data-edit-panel></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="quote" class="section section-tint">
+      <div class="container quote-wrap">
+        <div class="section-head">
+          <h2 class="h1">Send it to us</h2>
+          <p class="muted">We'll look it over and get back to you with a quote, usually within a day or two.</p>
+        </div>
+
+        <form class="quote-form" data-quote-form novalidate>
+          <fieldset class="radio-cards field quote-type">
+            <legend>What do you need?</legend>
+            <label class="radio-card"><input type="radio" name="kind" value="quote" checked>
+              <span><strong>A quote for an order</strong><small>Tell us how many and what sizes.</small></span></label>
+            <label class="radio-card"><input type="radio" name="kind" value="idea">
+              <span><strong>Just sending a design idea</strong><small>Not sure on numbers yet? No problem.</small></span></label>
+          </fieldset>
+
+          <div class="quote-grid">
+            <div class="field">
+              <label for="q-name">Full name <span class="req">*</span></label>
+              <input id="q-name" name="name" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="q-email">Email <span class="req">*</span></label>
+              <input id="q-email" name="email" type="email" autocomplete="email" required>
+            </div>
+            <div class="field">
+              <label for="q-phone">Phone</label>
+              <input id="q-phone" name="phone" type="tel" autocomplete="tel">
+            </div>
+            <div class="field">
+              <label for="q-date">Need it by</label>
+              <input id="q-date" name="needBy" type="date">
+            </div>
+          </div>
+
+          <fieldset class="field sizes-field" data-sizes-field>
+            <legend>Quantities by size <span class="req" data-qty-req>*</span></legend>
+            <div class="size-qty-grid" data-size-qty></div>
+            <p class="size-total">Total: <strong data-qty-total>0</strong> pieces</p>
+          </fieldset>
+
+          <div class="field">
+            <label for="q-notes">Notes</label>
+            <textarea id="q-notes" name="notes" rows="4" placeholder="Names and numbers for each shirt, ink colors you want matched, anything else we should know."></textarea>
+          </div>
+
+          <p class="field-error" data-quote-error hidden></p>
+          <div class="quote-actions">
+            <button type="submit" class="btn btn-primary" data-quote-submit>SEND MY DESIGN</button>
+            <small class="muted">We'll save a picture of your design (front and back) to your device so you can attach it.</small>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact" class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="assets/logo-web.png" alt="Texas Huddle Co." width="160" height="99">
+        <p>Loud, proud and team-first. Questions about sizing, team orders or anything else? Holler at us.</p>
+      </div>
+      <ul class="footer-contact">
+        <li><span class="label">Website</span><a href="https://texashuddleapparel.com">texashuddleapparel.com</a></li>
+        <li><span class="label">Phone</span><a href="tel:+14692582697">(469) 258-2697</a></li>
+        <li><span class="label">Email</span><a href="mailto:texashuddle@gmail.com">texashuddle@gmail.com</a></li>
+      </ul>
+    </div>
+    <div class="container footer-legal">
+      <small>&copy; <span data-year></span> Texas Huddle Co. All rights reserved.</small>
+    </div>
+  </footer>
+
+  <dialog class="modal confirm-modal" data-confirm-modal aria-labelledby="confirm-title">
+    <form method="dialog" class="modal-close-form">
+      <button class="icon-btn modal-close" aria-label="Close">&times;</button>
+    </form>
+    <div class="confirm" data-confirm-body></div>
+  </dialog>
+
+  <div class="toast" data-toast role="status" aria-live="polite"></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/garments.js"></script>
+  <script src="js/designer.js"></script>
+</body>
+</html>
