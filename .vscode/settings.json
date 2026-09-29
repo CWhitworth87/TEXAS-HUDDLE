@@ -1,0 +1,10 @@
+{
+  // Open the homepage when you click "Go Live" in the bottom bar.
+  "liveServer.settings.root": "/",
+  "liveServer.settings.port": 5500,
+  "liveServer.settings.donotShowInfoMsg": true,
+  "editor.formatOnSave": false,
+  "files.exclude": {
+    "**/.git": true
+  }
+}
